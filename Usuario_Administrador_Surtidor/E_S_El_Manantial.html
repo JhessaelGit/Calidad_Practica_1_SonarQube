@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E. S. El Manantial</title>
+    <link rel="stylesheet" href="../Surtidores/estilos_surtidores.css">
+</head>
+<body>
+    <h1>E. S. El Manantial</h1>
+
+    <p><strong>Ubicación del Surtidor:</strong></p>
+    <p>Avenida Ruben Dario </p>
+
+    <p><strong>Estado:</strong></p> 
+    <label id="estado-actual" class="agotado">Agotado</label>
+    <div id="horario">
+        <p><strong>Horario de atención:</strong></p>
+        <p>Lunes a Domingo: 08:00 - 22:00</p>
+        <p><strong>Gasolina Disponible (Ltrs):</strong></p>
+        <p id="gasolina-disponible">0</p>
+        <p id="estado-horario" class=""></p>
+    </div>
+    <!-- Formulario para registrar la llegada de gasolina -->
+    <h2>Registro de cantidad de gasolina</h2>
+
+    <form id="registrar-llegada-gasolina-form">
+        <label for="cantidad-gasolina">Cantidad de Gasolina(Litros):</label>
+        <input type="number" id="cantidad-gasolina" required />
+        <input type="submit" value="Registrar" id="registrar-llegada-gasolina-button"/>
+    </form>
+    
+    <div id="resultado-div"></div>
+    
+    <h2>Cancelar ticket</h2>
+    <form id="cancelar-ticket">
+        <label for="codigo-ticket">Ingrese el codigo del ticket a cancelar</label>
+        <input type="text" id="codigo-ticket">
+        <input type="submit" id="cancelar-button">
+    </form>
+    <script type="module" src="./registro_llegada_gasolina.js"></script>
+    <script type="module" src="../Surtidores/surtidores.js"></script>
+    <script type="module" src="./Cancelar_ticket.js"></script>
+
+</body>
+</html>

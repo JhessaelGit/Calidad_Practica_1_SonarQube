@@ -1,0 +1,529 @@
+[
+  {
+    "sha": "345fce6c5480d436fc9720569d62a6708e65f009",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-06T01:19:50.000Z",
+      "message": "Merge branch 'feature/ticket-reserva'",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/345fce6c5480d436fc9720569d62a6708e65f009"
+    },
+    "stats": {
+      "total": 294,
+      "additions": 291,
+      "deletions": 3,
+      "date": "2025-05-06"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "119aebb168523ccdd0952cc4c0efff0132312eed",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-13T13:18:14.000Z",
+      "message": "Fix: Se corrigio el codigo para verificar el Ci",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/119aebb168523ccdd0952cc4c0efff0132312eed"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 4,
+      "deletions": 4,
+      "date": "2025-05-13"
+    },
+    "coverage": 0,
+    "test_count": 52
+  },
+  {
+    "sha": "f80202541756b022900e7f17ea081801db5945ef",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-13T13:54:10.000Z",
+      "message": "fix<verificar_campos.js>: se corrigio el nombre de una variable",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/f80202541756b022900e7f17ea081801db5945ef"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2025-05-13"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "940b7cbd19f2112af6d84cd14bc805bf3b343aef",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-15T13:55:57.000Z",
+      "message": "refactor <Surtidores>: Cambio de nombre de la funcion actualizar estado horario a esta_dentro_horario",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/940b7cbd19f2112af6d84cd14bc805bf3b343aef"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 10,
+      "deletions": 10,
+      "date": "2025-05-15"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "a8c609b0c69bc363a717a3fdf545fbc4220953e5",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-15T14:01:37.000Z",
+      "message": "Refactor: Se renombro la carpeta de verificar datos de registro",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/a8c609b0c69bc363a717a3fdf545fbc4220953e5"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
+      "date": "2025-05-15"
+    },
+    "coverage": 0,
+    "test_count": 52
+  },
+  {
+    "sha": "a14e98552a175a6171508277ddfd322ed1fdc172",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-15T14:09:45.000Z",
+      "message": "Refactor<index.html>: Se cambio el titulo para que se entienda quien es el que se esta registrando",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/a14e98552a175a6171508277ddfd322ed1fdc172"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2025-05-15"
+    },
+    "coverage": 0,
+    "test_count": 52
+  },
+  {
+    "sha": "6dcc6dfa525f10a61cb5f65a7aea28803b254f28",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-18T03:57:45.000Z",
+      "message": "feat:Añadir botón de solicitud de ticket en todos los surtidores",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/6dcc6dfa525f10a61cb5f65a7aea28803b254f28"
+    },
+    "stats": {
+      "total": 80,
+      "additions": 42,
+      "deletions": 38,
+      "date": "2025-05-18"
+    },
+    "coverage": 0,
+    "test_count": 52
+  },
+  {
+    "sha": "aaace58e050aa106fd6ebdec987b6d2d56faf2d6",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-18T16:45:48.000Z",
+      "message": "Merge branch 'main' of https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/aaace58e050aa106fd6ebdec987b6d2d56faf2d6"
+    },
+    "stats": {
+      "total": 100,
+      "additions": 52,
+      "deletions": 48,
+      "date": "2025-05-18"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "7f844d90255098c4a5f44a3bffa005b3861a90cf",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-18T18:08:59.000Z",
+      "message": "feat(admin): agregar vistas HTML y estructura para administrador",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/7f844d90255098c4a5f44a3bffa005b3861a90cf"
+    },
+    "stats": {
+      "total": 214,
+      "additions": 193,
+      "deletions": 21,
+      "date": "2025-05-18"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "ded3941af8c696179ec83d05b58d395ac1652ea7",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-18T20:49:31.000Z",
+      "message": "style: mejora visual en botones y etiquetas de estado de surtidores, en vista usuario y administrador",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/ded3941af8c696179ec83d05b58d395ac1652ea7"
+    },
+    "stats": {
+      "total": 64,
+      "additions": 53,
+      "deletions": 11,
+      "date": "2025-05-18"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "6d44d8eeb384984ab81e566e1835bcb040e76088",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-19T02:25:45.000Z",
+      "message": "Feat: Se agrego la opcion de filtrar los surtidores por disponibilidad",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/6d44d8eeb384984ab81e566e1835bcb040e76088"
+    },
+    "stats": {
+      "total": 34,
+      "additions": 34,
+      "deletions": 0,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "c9ec6967169232117a20959eddf27207be5d51af",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-19T02:46:28.000Z",
+      "message": "Fix: Se agrego las conecciones para que la lista del administrador funcione",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/c9ec6967169232117a20959eddf27207be5d51af"
+    },
+    "stats": {
+      "total": 42,
+      "additions": 21,
+      "deletions": 21,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 31
+  },
+  {
+    "sha": "2fe22671641a3ff463c6e7266c425a325426e7bc",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-19T03:24:33.000Z",
+      "message": "test: incrementar el contasor en 1",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/2fe22671641a3ff463c6e7266c425a325426e7bc"
+    },
+    "stats": {
+      "total": 22,
+      "additions": 22,
+      "deletions": 0,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 53
+  },
+  {
+    "sha": "e0385b60bcd075da8c6fb2df296ca167edea8c5a",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-19T03:29:17.000Z",
+      "message": "test: decrementar contador en 1",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/e0385b60bcd075da8c6fb2df296ca167edea8c5a"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 10,
+      "deletions": 2,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 54
+  },
+  {
+    "sha": "94971cd85df8dd0944196773f430ad3c25da8817",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-19T03:32:12.000Z",
+      "message": "test: verificar que no decremente por debajo de 0",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/94971cd85df8dd0944196773f430ad3c25da8817"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 5,
+      "deletions": 0,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 55
+  },
+  {
+    "sha": "c541cb74697932dba34faf5abbf2cd97fc28842d",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-19T03:38:29.000Z",
+      "message": "feat: aplicando la logica y los botones para entrar y salir de la fila",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/c541cb74697932dba34faf5abbf2cd97fc28842d"
+    },
+    "stats": {
+      "total": 98,
+      "additions": 83,
+      "deletions": 15,
+      "date": "2025-05-19"
+    },
+    "coverage": 0,
+    "test_count": 55
+  },
+  {
+    "sha": "91ddbed6aba2025955ad614863ea5d24c8a4e6f2",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-25T01:12:19.000Z",
+      "message": "test(registro): verificar redirección a lista de surtidores al ser registrado",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/91ddbed6aba2025955ad614863ea5d24c8a4e6f2"
+    },
+    "stats": {
+      "total": 18,
+      "additions": 18,
+      "deletions": 0,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "feb8323647ddfd41669ea20b8f4916523ae4f231",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-25T01:32:26.000Z",
+      "message": "feat(test)<solicitar_ticket.cy.js>: agregar filtrado y verificación de surtidores disponibles en flujo de solicitud",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/feb8323647ddfd41669ea20b8f4916523ae4f231"
+    },
+    "stats": {
+      "total": 15,
+      "additions": 13,
+      "deletions": 2,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "5e4640bab2ebcfe971e95edaf0b0fab58e44a511",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-25T01:39:43.000Z",
+      "message": "feat(test)<solicitar_ticket.cy.js>: agregar selección de surtidor disponible y solicitud de ticket",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/5e4640bab2ebcfe971e95edaf0b0fab58e44a511"
+    },
+    "stats": {
+      "total": 5,
+      "additions": 5,
+      "deletions": 0,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "69f4185f36d0d3b13f23ab47a48a84bcb6911159",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-25T01:51:08.000Z",
+      "message": "feat(test)<solicitar_ticket.cy.js>: Agrega el registro en fila, completando el flujo",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/69f4185f36d0d3b13f23ab47a48a84bcb6911159"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 19,
+      "deletions": 1,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "e22b343492216c1f94d86b5be56a6ec6356a5e07",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T16:26:37.000Z",
+      "message": "Feat<Surtidores Administrador>: se agrego la cantidad de gasolina que hay en cada surtidor",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/e22b343492216c1f94d86b5be56a6ec6356a5e07"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 10,
+      "deletions": 0,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "74efa64c0c325cd939a14950b0f23a70cd8a7d53",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T21:19:09.000Z",
+      "message": "Feat: se agrego la cantidad de gasolina a la lista de los surtidores de los usuarios",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/74efa64c0c325cd939a14950b0f23a70cd8a7d53"
+    },
+    "stats": {
+      "total": 216,
+      "additions": 124,
+      "deletions": 92,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "ed80679e78eab777a95c877a27384760815ef162",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T21:27:17.000Z",
+      "message": "Feat: se agrego la cantidad de gasolina en cada surtidor del usuario particular",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/ed80679e78eab777a95c877a27384760815ef162"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 10,
+      "deletions": 0,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "8332deb990f8cf6bbdf814b8d9e72e0cfb5ac4ad",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T21:43:12.000Z",
+      "message": "Feat<Registro llegada gasolina>: Ahora actualiza la cantidad de gasolina",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/8332deb990f8cf6bbdf814b8d9e72e0cfb5ac4ad"
+    },
+    "stats": {
+      "total": 29,
+      "additions": 15,
+      "deletions": 14,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "a94eded551f38a2916b5f96d3fc7b4c5c4d782b9",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T21:50:08.000Z",
+      "message": "Feat<Registro llegada gasolina>: Cambia el valor de la disponibilidad de la gasolina en el surtidor",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/a94eded551f38a2916b5f96d3fc7b4c5c4d782b9"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 11,
+      "deletions": 1,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "34f1895291fe8b5dee593cbf53c50da90b881b19",
+    "author": "Jhessael Siancas",
+    "commit": {
+      "date": "2025-05-25T21:51:05.000Z",
+      "message": "Style<Registro llegada gasolina>: Actualiza el color de la disponibilidad",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/34f1895291fe8b5dee593cbf53c50da90b881b19"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 4,
+      "deletions": 0,
+      "date": "2025-05-25"
+    },
+    "coverage": 0,
+    "test_count": 34
+  },
+  {
+    "sha": "1f4a592495a4e9df220beedaf195df5a760d773f",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-26T00:08:48.000Z",
+      "message": "Merge branch 'Entrar/salirDeFila'",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/1f4a592495a4e9df220beedaf195df5a760d773f"
+    },
+    "stats": {
+      "total": 328,
+      "additions": 4,
+      "deletions": 324,
+      "date": "2025-05-26"
+    },
+    "coverage": 0,
+    "test_count": 55
+  },
+  {
+    "sha": "4dab0d189b9f486462ad59e227ebf262c255eb91",
+    "author": "melanytorrez",
+    "commit": {
+      "date": "2025-05-26T01:03:18.000Z",
+      "message": "test:prueba para el ingreso de vehiculos en la fila",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/4dab0d189b9f486462ad59e227ebf262c255eb91"
+    },
+    "stats": {
+      "total": 44,
+      "additions": 44,
+      "deletions": 0,
+      "date": "2025-05-26"
+    },
+    "coverage": 0,
+    "test_count": 55
+  },
+  {
+    "sha": "54738c9ffbf013b6b9240e5f2852fce88d4510f4",
+    "author": "Tairin-Munoz",
+    "commit": {
+      "date": "2025-05-26T01:14:13.000Z",
+      "message": "Merge remote-tracking branch 'origin/promedio_carga_gasolina'",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/54738c9ffbf013b6b9240e5f2852fce88d4510f4"
+    },
+    "stats": {
+      "total": 235,
+      "additions": 235,
+      "deletions": 0,
+      "date": "2025-05-26"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "e91ed934fa9a0656a5ce955f1b47e5445fcd379c",
+    "author": "Diego Rios",
+    "commit": {
+      "date": "2025-05-26T01:37:52.000Z",
+      "message": "Merge branch 'cy_ticket'",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/e91ed934fa9a0656a5ce955f1b47e5445fcd379c"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 6,
+      "deletions": 35,
+      "date": "2025-05-26"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "9a9251d376e174e9548f6fa89a70c07de5d20c57",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-15T23:23:49.000Z",
+      "message": "Primer analisis con SonarQube",
+      "url": "https://github.com/JhessaelGit/Proyecto_Gasolina_Ing_Software/commit/9a9251d376e174e9548f6fa89a70c07de5d20c57"
+    },
+    "stats": {
+      "total": 6300,
+      "additions": 2499,
+      "deletions": 3801,
+      "date": "2026-03-15"
+    },
+    "coverage": 0,
+    "test_count": 37
+  }
+]
