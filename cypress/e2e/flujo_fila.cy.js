@@ -29,14 +29,14 @@ describe('Flujo completo: registro, filtrado, selección de surtidor e ingresar 
 
     // 8. Guardar la cantidad actual de personas en la fila
     cy.get('#contador-fila').invoke('text').then((textBefore) => {
-        const filaAntes = parseInt(textBefore);
+        const filaAntes = Number.parseInt(textBefore);
     
         // 9. Hacer clic en "Ingresar a la fila"
         cy.get('#btn-ingresar-fila').click();
         
         // 10. Verificar que la cantidad en la fila ha incrementado en 1
         cy.get('#contador-fila').should(($contador) => {
-            const filaDespues = parseInt($contador.text());
+            const filaDespues = Number.parseInt($contador.text());
             expect(filaDespues).to.eq(filaAntes + 1);
         });
     });

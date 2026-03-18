@@ -627,5 +627,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "abb5c27ccde8a2778b10a11bb75489ef5637b459",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:55:42.000Z",
+      "message": "refactor: Cambie Number.parseInt en lugar de parseInt en flujo_fila.cy.ja",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/abb5c27ccde8a2778b10a11bb75489ef5637b459"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
