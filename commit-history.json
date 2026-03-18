@@ -610,5 +610,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "041db8cd87935712c0d7531243c6ceebfa1bd0da",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:21:48.000Z",
+      "message": "refactor: Cambie Number.parseInt en lugar de parseInt y Number.parseFloat en lugar de parseFloat",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/041db8cd87935712c0d7531243c6ceebfa1bd0da"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 5,
+      "deletions": 5,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]

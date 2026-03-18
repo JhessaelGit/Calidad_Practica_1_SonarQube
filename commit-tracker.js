@@ -31,12 +31,12 @@ function getCommitInfo(sha, isFirstCommit) {
       const diffStats = execSync(`git diff --stat ${sha}~1 ${sha}`).toString();
       const additionsMatch = diffStats.match(/(\d+) insertion/);
       const deletionsMatch = diffStats.match(/(\d+) deletion/);
-      additions = additionsMatch ? parseInt(additionsMatch[1]) : 0;
-      deletions = deletionsMatch ? parseInt(deletionsMatch[1]) : 0;
+      additions = additionsMatch ? Number.parseInt(additionsMatch[1]) : 0;
+      deletions = deletionsMatch ? Number.parseInt(deletionsMatch[1]) : 0;
     } catch {}
   } else {
     additions = execSync(`git diff --stat ${sha}`).toString().match(/(\d+) insertion/);
-    additions = additions ? parseInt(additions[1]) : 0;
+    additions = additions ? Number.parseInt(additions[1]) : 0;
   }
 
   let testCount = 0, coverage = 0;
@@ -49,14 +49,14 @@ function getCommitInfo(sha, isFirstCommit) {
       } catch {
         const testCountMatch = jestOutput.match(/numTotalTests['"]\s*:\s*(\d+)/);
         if (testCountMatch) {
-          testCount = parseInt(testCountMatch[1]);
+          testCount = Number.parseInt(testCountMatch[1]);
         }
       }
 
       const coverageOutput = execSync('npm test -- --coverage --verbose', { stdio: 'pipe' }).toString();
       const coverageMatch = coverageOutput.match(/All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/);
       if (coverageMatch) {
-        coverage = parseFloat(coverageMatch[1]);
+        coverage = Number.parseFloat(coverageMatch[1]);
       }
     } catch {}
   }
