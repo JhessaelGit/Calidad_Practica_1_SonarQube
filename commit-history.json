@@ -593,5 +593,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "04ed3632dcd47279be9867cd22edda83f125d00a",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:15:35.000Z",
+      "message": "fix: elimine id duplicado estado-actual y usar class",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/04ed3632dcd47279be9867cd22edda83f125d00a"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 6,
+      "deletions": 7,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
