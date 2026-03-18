@@ -12,7 +12,7 @@ boton_registrar_llegada_gasolina.addEventListener("click", (event) => {
 
   const todos_los_campos_son_validos = verificar_cantidad_gasolina(cantidad_gasolina_value);
   if (todos_los_campos_son_validos) {
-    const cantidadNumerica = parseInt(cantidad_gasolina_value);
+    const cantidadNumerica = Number.parseInt(cantidad_gasolina_value);
 
     gasolinaDisponibleElemento.textContent = cantidadNumerica;
 
