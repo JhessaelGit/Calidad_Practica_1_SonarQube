@@ -525,5 +525,39 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "7f3169eeb7e39425864b8568375daf0e58363e30",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:37:15.000Z",
+      "message": "fix: Se cambio labels que solo mostraban informacion por p",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7f3169eeb7e39425864b8568375daf0e58363e30"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 5,
+      "deletions": 5,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "658777e53812c8a58a5fed62f40a7157d57530b2",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:39:40.000Z",
+      "message": "fix: Se cambio labels que solo mostraban informacion por p",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/658777e53812c8a58a5fed62f40a7157d57530b2"
+    },
+    "stats": {
+      "total": 37,
+      "additions": 27,
+      "deletions": 10,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
