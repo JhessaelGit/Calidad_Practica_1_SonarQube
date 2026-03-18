@@ -559,5 +559,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "7112a96f96e2eaa8173bb8efd698dd5bdba3d3e9",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:43:27.000Z",
+      "message": "fix: reemplaze replace por replaceAll para mejorar legibilidad",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7112a96f96e2eaa8173bb8efd698dd5bdba3d3e9"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
