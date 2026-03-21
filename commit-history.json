@@ -661,5 +661,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "7fac0d27b1840ba9620b7d691ba8856a385dc4c5",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-21T22:42:44.000Z",
+      "message": "chore: configurar reporte de coverage para SonarQube",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7fac0d27b1840ba9620b7d691ba8856a385dc4c5"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-21"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
