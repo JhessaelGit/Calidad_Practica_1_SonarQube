@@ -644,5 +644,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "c5ce530d854c763509658d83cff2176abaf2eb40",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-21T22:34:04.000Z",
+      "message": "fix: Se reemplazo los label sin inputs",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/c5ce530d854c763509658d83cff2176abaf2eb40"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
+      "date": "2026-03-21"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
