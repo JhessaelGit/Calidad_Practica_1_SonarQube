@@ -13,8 +13,7 @@ boton_filtro.addEventListener('click',() =>{
         }
         else if(valor === 'disponibles'){
             surtidores.forEach(surtidor => {
-                const estado = surtidor.querySelector('label');
-
+                const estado = surtidor.querySelector('.estado-actual');
                 if (estado && estado.classList.contains('agotado')) {
                     surtidor.style.display = 'none'; 
                 }

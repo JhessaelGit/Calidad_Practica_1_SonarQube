@@ -44,7 +44,7 @@ if (botonTicket) {
 // CONTADOR DE FILA
 
 const nombreSurtidor = document.querySelector("h1")?.textContent ?? "Surtidor";
-const keyContador = `contadorFila-${nombreSurtidor.replace(/\s+/g, '_')}`;
+const keyContador = `contadorFila-${nombreSurtidor.replaceAll(/\s+/g, '_')}`;
 
 const contadorElemento = document.getElementById("contador-fila");
 const btnIngresar = document.getElementById("btn-ingresar-fila");

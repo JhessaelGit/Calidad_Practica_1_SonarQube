@@ -525,5 +525,158 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "7f3169eeb7e39425864b8568375daf0e58363e30",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:37:15.000Z",
+      "message": "fix: Se cambio labels que solo mostraban informacion por p",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7f3169eeb7e39425864b8568375daf0e58363e30"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 5,
+      "deletions": 5,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "658777e53812c8a58a5fed62f40a7157d57530b2",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:39:40.000Z",
+      "message": "fix: Se cambio labels que solo mostraban informacion por p",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/658777e53812c8a58a5fed62f40a7157d57530b2"
+    },
+    "stats": {
+      "total": 37,
+      "additions": 27,
+      "deletions": 10,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "7112a96f96e2eaa8173bb8efd698dd5bdba3d3e9",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:43:27.000Z",
+      "message": "fix: reemplaze replace por replaceAll para mejorar legibilidad",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7112a96f96e2eaa8173bb8efd698dd5bdba3d3e9"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "b290115d2a394f0ac9b3d7b449c637a1cad4757c",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T19:51:59.000Z",
+      "message": "refactor: usar Number.parseInt en lugar de parseInt",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/b290115d2a394f0ac9b3d7b449c637a1cad4757c"
+    },
+    "stats": {
+      "total": 2,
+      "additions": 1,
+      "deletions": 1,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "04ed3632dcd47279be9867cd22edda83f125d00a",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:15:35.000Z",
+      "message": "fix: elimine id duplicado estado-actual y usar class",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/04ed3632dcd47279be9867cd22edda83f125d00a"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 6,
+      "deletions": 7,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "041db8cd87935712c0d7531243c6ceebfa1bd0da",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:21:48.000Z",
+      "message": "refactor: Cambie Number.parseInt en lugar de parseInt y Number.parseFloat en lugar de parseFloat",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/041db8cd87935712c0d7531243c6ceebfa1bd0da"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 5,
+      "deletions": 5,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "abb5c27ccde8a2778b10a11bb75489ef5637b459",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-18T20:55:42.000Z",
+      "message": "refactor: Cambie Number.parseInt en lugar de parseInt en flujo_fila.cy.ja",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/abb5c27ccde8a2778b10a11bb75489ef5637b459"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-18"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "c5ce530d854c763509658d83cff2176abaf2eb40",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-21T22:34:04.000Z",
+      "message": "fix: Se reemplazo los label sin inputs",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/c5ce530d854c763509658d83cff2176abaf2eb40"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
+      "date": "2026-03-21"
+    },
+    "coverage": 0,
+    "test_count": 37
+  },
+  {
+    "sha": "7fac0d27b1840ba9620b7d691ba8856a385dc4c5",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-21T22:42:44.000Z",
+      "message": "chore: configurar reporte de coverage para SonarQube",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/7fac0d27b1840ba9620b7d691ba8856a385dc4c5"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-21"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
