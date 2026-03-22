@@ -746,5 +746,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "b9c563ec6c0a236a732d0eaa5717ea815db5cac2",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T01:15:36.000Z",
+      "message": "fix: Se elimino los selectores duplicados en estilos_lista_surtidores.css",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/b9c563ec6c0a236a732d0eaa5717ea815db5cac2"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 1,
+      "deletions": 19,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
