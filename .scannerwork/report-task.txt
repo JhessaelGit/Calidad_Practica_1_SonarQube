@@ -2,5 +2,5 @@ projectKey=Practica_1_Calidad
 serverUrl=http://localhost:9000
 serverVersion=26.3.0.120487
 dashboardUrl=http://localhost:9000/dashboard?id=Practica_1_Calidad
-ceTaskId=0e68b405-3cf8-40ab-a175-8b8115ec88a9
-ceTaskUrl=http://localhost:9000/api/ce/task?id=0e68b405-3cf8-40ab-a175-8b8115ec88a9
+ceTaskId=12140012-e193-469c-ae2b-c12cac4562f3
+ceTaskUrl=http://localhost:9000/api/ce/task?id=12140012-e193-469c-ae2b-c12cac4562f3

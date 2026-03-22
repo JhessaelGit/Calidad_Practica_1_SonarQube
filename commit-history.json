@@ -763,5 +763,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "3fb1990f886c689c2c0805d080c36d5ea359a004",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T15:11:20.000Z",
+      "message": "fix: Se cambio el fs por node:fs para evitar conflictos de paquetes",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/3fb1990f886c689c2c0805d080c36d5ea359a004"
+    },
+    "stats": {
+      "total": 197,
+      "additions": 111,
+      "deletions": 86,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
