@@ -848,5 +848,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "f4e7e0da7c813387eb09ce4846178743811af723",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T23:58:10.000Z",
+      "message": "refactor(commit-tracker.js): Se elimino el uso de regex vulnerable y se mejoro la extraccion de stats",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/f4e7e0da7c813387eb09ce4846178743811af723"
+    },
+    "stats": {
+      "total": 72,
+      "additions": 35,
+      "deletions": 37,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 0
   }
 ]
