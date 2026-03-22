@@ -831,5 +831,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "95620abe009f132c741c9ecc7a773fae29809a7c",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T18:32:59.000Z",
+      "message": "actualizacion de ejecucion del SonarQube",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/95620abe009f132c741c9ecc7a773fae29809a7c"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
