@@ -729,5 +729,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "637b374f6ac26ea772ee10851ab4f54281d7129a",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T01:09:27.000Z",
+      "message": "refactor: Se elimino los comentarios del codigo",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/637b374f6ac26ea772ee10851ab4f54281d7129a"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 0,
+      "deletions": 3,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]

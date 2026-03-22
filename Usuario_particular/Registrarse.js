@@ -17,8 +17,6 @@ boton_registrarse.addEventListener("click", (event) => {
   if (todos_los_campos_son_validos){
     //routing
     globalThis.location.href = "./Usuario_particular/lista_surtidores.html";
-    //console.log("Redirigiendo a lista_surtidores.html");
-    //window.location.href = "./Usuario_Administrador_Surtidor/registro_admin.html";
   }
   else{
     alert("Por favor, ingrese los datos correctamente, los campos no deven estar vacios y debe poner un correo valido")
