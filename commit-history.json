@@ -712,5 +712,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "4c7d1d466b977503d3645191cff6a8ec1b133d4f",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T01:07:07.000Z",
+      "message": "refactor: Cambio la exprecion de cadena",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/4c7d1d466b977503d3645191cff6a8ec1b133d4f"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 1,
+      "deletions": 2,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]

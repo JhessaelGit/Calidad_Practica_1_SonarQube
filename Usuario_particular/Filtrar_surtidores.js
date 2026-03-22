@@ -11,13 +11,12 @@ function filtrar(valor){
     else if(valor === 'disponibles'){
         surtidores.forEach(surtidor => {
             const estado = surtidor.querySelector('.estado-actual');
-            if (estado && estado.classList.contains('agotado')) {
+            if (estado?.classList.contains('agotado')) {
                 surtidor.style.display = 'none'; 
             }
         });
     }
 }
-
 boton_filtro.addEventListener('click',() =>{
     const opcion_filtrado_value = opcion_filtrado.value; 
     filtrar(opcion_filtrado_value);
