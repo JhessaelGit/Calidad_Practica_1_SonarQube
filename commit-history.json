@@ -814,5 +814,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "9489fcb0aac8a88ecd4021c3fafbd8c6886312d6",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T18:30:33.000Z",
+      "message": "fix(semantic-commits.js): Se agrego el node: a los paquetes para evitar conflictos",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/9489fcb0aac8a88ecd4021c3fafbd8c6886312d6"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
