@@ -695,5 +695,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "9cfb749e221846d70101ad3d592c3102c22ad055",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T00:52:45.000Z",
+      "message": "refactor: Se saco la funcion filtrar fuera del evento",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/9cfb749e221846d70101ad3d592c3102c22ad055"
+    },
+    "stats": {
+      "total": 32,
+      "additions": 16,
+      "deletions": 16,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
