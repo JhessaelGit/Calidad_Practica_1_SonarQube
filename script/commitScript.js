@@ -1,7 +1,7 @@
-import { execSync } from 'child_process';
-import { fileURLToPath } from 'url';
-import fs from 'fs';
-import path from 'path';
+import { execSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const getLatestCommitId = () => {
     const latestCommit = execSync('git rev-parse HEAD').toString().trim();
