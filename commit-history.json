@@ -797,5 +797,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "34c8761b3a111508c16d49a45779c3de08eceb74",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T18:29:55.000Z",
+      "message": "fix(tddScript.js): Se agrego el node: a los paquetes para evitar conflictos",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/34c8761b3a111508c16d49a45779c3de08eceb74"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
