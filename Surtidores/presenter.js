@@ -37,7 +37,7 @@ if (botonTicket) {
     const ticket = generarTicket({ nombre, ubicacion, estado });
 
     localStorage.setItem("ticketActual", JSON.stringify(ticket));
-    window.location.href = "ticket.html";
+    globalThis.location.href = "ticket.html";
   });
 }
 

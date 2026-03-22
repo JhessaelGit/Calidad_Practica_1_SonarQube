@@ -16,7 +16,7 @@ boton_registrarse.addEventListener("click", (event) => {
   const todos_los_campos_son_validos = verificar_nombre(nombre_usuario_value) && verificar_ci(ci_usuario_value) && verificar_correo(correo_usuario_value) && verificar_contrasenia(contrasenia_usuario_value);
   if (todos_los_campos_son_validos){
     //routing
-    window.location.href = "./Usuario_particular/lista_surtidores.html";
+    globalThis.location.href = "./Usuario_particular/lista_surtidores.html";
     //console.log("Redirigiendo a lista_surtidores.html");
     //window.location.href = "./Usuario_Administrador_Surtidor/registro_admin.html";
   }

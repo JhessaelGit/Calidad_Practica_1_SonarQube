@@ -678,5 +678,22 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "bad21f4e4646e2a51cc97ee4e63a6333ba2ee873",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T00:46:50.000Z",
+      "message": "Refactor: Se reemplazo windows por globalThis",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/bad21f4e4646e2a51cc97ee4e63a6333ba2ee873"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 2,
+      "deletions": 2,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 37
   }
 ]
