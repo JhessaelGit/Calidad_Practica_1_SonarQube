@@ -2,7 +2,7 @@ import { estaciones } from "../estaciones.js";
   
   document.addEventListener("DOMContentLoaded", () => {
   
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(globalThis.location.search);
     const key = params.get("id");
     const estacion = estaciones[key];
   

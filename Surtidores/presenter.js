@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   //  CARGA DINÁMICA
   // =========================
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(globalThis.location.search);
   const key = params.get("id");
   const estacion = estaciones[key];
 
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       localStorage.setItem("ticketActual", JSON.stringify(ticket));
-      window.location.href = "ticket.html";
+      globalThis.location.href = "ticket.html";
     });
   }
 
