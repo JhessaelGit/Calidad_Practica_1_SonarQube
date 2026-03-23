@@ -848,5 +848,39 @@
     },
     "coverage": 0,
     "test_count": 37
+  },
+  {
+    "sha": "f4e7e0da7c813387eb09ce4846178743811af723",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-22T23:58:10.000Z",
+      "message": "refactor(commit-tracker.js): Se elimino el uso de regex vulnerable y se mejoro la extraccion de stats",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/f4e7e0da7c813387eb09ce4846178743811af723"
+    },
+    "stats": {
+      "total": 72,
+      "additions": 35,
+      "deletions": 37,
+      "date": "2026-03-22"
+    },
+    "coverage": 0,
+    "test_count": 0
+  },
+  {
+    "sha": "47e12847ee469b30bdde8fa8787691bd0d9cd225",
+    "author": "JhessaelGit",
+    "commit": {
+      "date": "2026-03-23T00:00:56.000Z",
+      "message": "refactor(ticket.js): usar generador seguro crypto en lugar de Math.random para códigos",
+      "url": "https://github.com/JhessaelGit/Calidad_Practica_1_SonarQube/commit/47e12847ee469b30bdde8fa8787691bd0d9cd225"
+    },
+    "stats": {
+      "total": 41,
+      "additions": 20,
+      "deletions": 21,
+      "date": "2026-03-23"
+    },
+    "coverage": 0,
+    "test_count": 0
   }
 ]

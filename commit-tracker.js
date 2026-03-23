@@ -1,19 +1,22 @@
 import fs from 'node:fs';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const DATA_FILE = 'commit-history.json';
+const GIT = '/usr/bin/git';
+const NPX = '/usr/bin/npx';
+const NPM = '/usr/bin/npm';
 
 function getBasicInfo(sha) {
   return {
-    message: execSync(`git log -1 --pretty=%B ${sha}`).toString().trim(),
-    date: new Date(execSync(`git log -1 --format=%cd ${sha}`).toString()).toISOString(),
-    author: execSync(`git log -1 --pretty=format:%an ${sha}`).toString().trim()
+    message: execFileSync(GIT, ['log', '-1', '--pretty=%B', sha]).toString().trim(),
+    date: new Date(execFileSync(GIT, ['log', '-1', '--format=%cd', sha]).toString()).toISOString(),
+    author: execFileSync(GIT, ['log', '-1', '--pretty=format:%an', sha]).toString().trim()
   };
 }
 
 function getRepoUrl() {
   try {
-    let url = execSync('git config --get remote.origin.url')
+    let url = execFileSync(GIT, ['config', '--get', 'remote.origin.url'])
       .toString()
       .trim()
       .replace(/\.git$/, '');
@@ -33,42 +36,45 @@ function getStats(sha, isFirstCommit) {
   let deletions = 0;
 
   try {
+    let diff;
+
     if (isFirstCommit) {
-      const diff = execSync(`git diff --stat ${sha}`).toString();
-      additions = Number.parseInt(diff.match(/(\d+) insertion/)?.[1]) || 0;
+      diff = execFileSync(GIT, ['diff', '--stat', sha]).toString();
     } else {
-      const diff = execSync(`git diff --stat ${sha}~1 ${sha}`).toString();
-      additions = Number.parseInt(diff.match(/(\d+) insertion/)?.[1]) || 0;
-      deletions = Number.parseInt(diff.match(/(\d+) deletion/)?.[1]) || 0;
+      diff = execFileSync(GIT, ['diff', '--stat', `${sha}~1`, sha]).toString();
     }
+
+    const parts = diff.split(',');
+    const insertionPart = parts.find(p => p.includes('insertion')) || '';
+    const deletionPart = parts.find(p => p.includes('deletion')) || '';
+
+    additions = Number.parseInt(insertionPart) || 0;
+    deletions = Number.parseInt(deletionPart) || 0;
   } catch {}
 
   return { additions, deletions };
 }
 
-function getTestAndCoverage() {
+function getTestData() {
   let testCount = 0;
   let coverage = 0;
 
   if (!fs.existsSync('package.json')) return { testCount, coverage };
 
   try {
-    const jestOutput = execSync('npx jest --json', { stdio: 'pipe' }).toString();
+    const jestOutput = execFileSync(NPX, ['jest', '--json'], { stdio: 'pipe' }).toString();
 
     try {
-      const jestResults = JSON.parse(jestOutput);
-      testCount = jestResults.numTotalTests;
+      testCount = JSON.parse(jestOutput).numTotalTests;
     } catch {
       const match = jestOutput.match(/numTotalTests['"]\s*:\s*(\d+)/);
       if (match) testCount = Number.parseInt(match[1]);
     }
 
-    const coverageOutput = execSync('npm test -- --coverage --verbose', { stdio: 'pipe' }).toString();
-    const coverageMatch = coverageOutput.match(/All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/);
+    const coverageOutput = execFileSync(NPM, ['test', '--', '--coverage', '--verbose'], { stdio: 'pipe' }).toString();
+    const match = coverageOutput.match(/All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/);
 
-    if (coverageMatch) {
-      coverage = Number.parseFloat(coverageMatch[1]);
-    }
+    if (match) coverage = Number.parseFloat(match[1]);
   } catch {}
 
   return { testCount, coverage };
@@ -78,8 +84,8 @@ function getCommitInfo(sha, isFirstCommit) {
   try {
     const basic = getBasicInfo(sha);
     const repoUrl = getRepoUrl();
-    const { additions, deletions } = getStats(sha, isFirstCommit);
-    const { testCount, coverage } = getTestAndCoverage();
+    const stats = getStats(sha, isFirstCommit);
+    const testData = getTestData();
 
     return {
       sha,
@@ -90,20 +96,18 @@ function getCommitInfo(sha, isFirstCommit) {
         url: repoUrl ? `${repoUrl}/commit/${sha}` : ''
       },
       stats: {
-        total: additions + deletions,
-        additions,
-        deletions,
+        total: stats.additions + stats.deletions,
+        additions: stats.additions,
+        deletions: stats.deletions,
         date: basic.date.split('T')[0]
       },
-      coverage,
-      test_count: testCount
+      coverage: testData.coverage,
+      test_count: testData.testCount
     };
-  } catch (error) {
-    console.error(`Error en commit ${sha}:`, error);
+  } catch {
     return null;
   }
 }
-
 
 function isDuplicate(newCommit, existingCommits) {
   for (const commit of existingCommits) {
@@ -117,7 +121,6 @@ function isDuplicate(newCommit, existingCommits) {
       const newDate = new Date(newCommit.commit.date);
 
       if (newDate >= existingDate) {
-        console.log(`Detectado commit duplicado (${newCommit.sha}), se mantiene el más antiguo (${commit.sha})`);
         return true;
       }
     }
@@ -157,21 +160,19 @@ function saveCommitData(commitData) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(commits, null, 2));
 }
 
-
 try {
   if (!fs.existsSync(DATA_FILE)) {
     fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
   }
 
-  const currentSha = execSync('git rev-parse HEAD').toString().trim();
-  const isFirstCommit = execSync('git rev-list --count HEAD').toString().trim() === '1';
+  const currentSha = execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
+  const isFirstCommit = execFileSync(GIT, ['rev-list', '--count', 'HEAD']).toString().trim() === '1';
 
   const commitData = getCommitInfo(currentSha, isFirstCommit);
 
   if (commitData) {
     saveCommitData(commitData);
   }
-} catch (error) {
-  console.error('Error en el script:', error);
+} catch {
   process.exit(1);
 }
