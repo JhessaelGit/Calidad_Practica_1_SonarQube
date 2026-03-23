@@ -3,42 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E. S. Portales</title>
+    <title id="titulo"></title>
     <link rel="stylesheet" href="../Surtidores/estilos_surtidores.css">
 </head>
 <body>
-    <h1>E. S. Portales</h1>
-    
+
+    <h1 id="nombre-estacion"></h1>
+
     <p><strong>Ubicación del Surtidor:</strong></p>
-    <p>Avenida Santa Cruz y Avenida Portales</p>
-    
+    <p id="direccion"></p>
+
     <p><strong>Estado:</strong></p> 
-    <p id="estado-actual" class="disponible">Disponible</p>
+    <p id="estado-actual"></p>
+
     <div id="horario">
         <p><strong>Horario de atención:</strong></p>
-        <p>Lunes a Domingo: 08:00 - 22:00</p>
+        <p id="horario-texto"></p>
+
         <p><strong>Gasolina Disponible (Ltrs):</strong></p>
-        <p id="gasolina-disponible">10300</p>
-        <p id="estado-horario" class=""></p>
+        <p id="gasolina-disponible"></p>
+
+        <p id="estado-horario"></p>
     </div>
-    <!-- Formulario para registrar la llegada de gasolina -->
+
     <h2>Registro de cantidad de gasolina</h2>
 
     <form id="registrar-llegada-gasolina-form">
         <label for="cantidad-gasolina">Cantidad de Gasolina(Litros):</label>
         <input type="number" id="cantidad-gasolina" required />
-        <input type="submit" value="Registrar" id="registrar-llegada-gasolina-button"/>
+        <input type="submit" value="Registrar"/>
     </form>
     
     <div id="resultado-div"></div>
+    
     <h2>Cancelar ticket</h2>
+
     <form id="cancelar-ticket">
         <label for="codigo-ticket">Ingrese el codigo del ticket a cancelar</label>
         <input type="text" id="codigo-ticket">
-        <input type="submit" id="cancelar-button">
+        <input type="submit">
     </form>
+
+
+    <script type="module" src="./admin_presenter.js"></script>
+
+    <!-- tus scripts existentes -->
     <script type="module" src="./registro_llegada_gasolina.js"></script>
     <script type="module" src="../Surtidores/surtidores.js"></script>
     <script type="module" src="./Cancelar_ticket.js"></script>
+
 </body>
 </html>
