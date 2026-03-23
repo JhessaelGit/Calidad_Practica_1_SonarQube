@@ -1,16 +1,16 @@
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
 
+const GIT = '/usr/bin/git';
+
 const getLatestCommitId = () => {
-    const latestCommit = execSync('git rev-parse HEAD').toString().trim();
-    return latestCommit;
+    return execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
 };
 
 const getLatestCommitName = () => {
-    const commitName = execSync('git log -1 --pretty=%B').toString().trim();
-    return commitName;
+    return execFileSync(GIT, ['log', '-1', '--pretty=%B']).toString().trim();
 };
 
 const updateJsonFile = (commitId, commitName) => {
