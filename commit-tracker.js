@@ -2,18 +2,21 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 const DATA_FILE = 'commit-history.json';
+const GIT = '/usr/bin/git';
+const NPX = '/usr/bin/npx';
+const NPM = '/usr/bin/npm';
 
 function getBasicInfo(sha) {
   return {
-    message: execFileSync('git', ['log', '-1', '--pretty=%B', sha]).toString().trim(),
-    date: new Date(execFileSync('git', ['log', '-1', '--format=%cd', sha]).toString()).toISOString(),
-    author: execFileSync('git', ['log', '-1', '--pretty=format:%an', sha]).toString().trim()
+    message: execFileSync(GIT, ['log', '-1', '--pretty=%B', sha]).toString().trim(),
+    date: new Date(execFileSync(GIT, ['log', '-1', '--format=%cd', sha]).toString()).toISOString(),
+    author: execFileSync(GIT, ['log', '-1', '--pretty=format:%an', sha]).toString().trim()
   };
 }
 
 function getRepoUrl() {
   try {
-    let url = execFileSync('git', ['config', '--get', 'remote.origin.url'])
+    let url = execFileSync(GIT, ['config', '--get', 'remote.origin.url'])
       .toString()
       .trim()
       .replace(/\.git$/, '');
@@ -36,9 +39,9 @@ function getStats(sha, isFirstCommit) {
     let diff;
 
     if (isFirstCommit) {
-      diff = execFileSync('git', ['diff', '--stat', sha]).toString();
+      diff = execFileSync(GIT, ['diff', '--stat', sha]).toString();
     } else {
-      diff = execFileSync('git', ['diff', '--stat', `${sha}~1`, sha]).toString();
+      diff = execFileSync(GIT, ['diff', '--stat', `${sha}~1`, sha]).toString();
     }
 
     const parts = diff.split(',');
@@ -59,7 +62,7 @@ function getTestData() {
   if (!fs.existsSync('package.json')) return { testCount, coverage };
 
   try {
-    const jestOutput = execFileSync('npx', ['jest', '--json'], { stdio: 'pipe' }).toString();
+    const jestOutput = execFileSync(NPX, ['jest', '--json'], { stdio: 'pipe' }).toString();
 
     try {
       testCount = JSON.parse(jestOutput).numTotalTests;
@@ -68,7 +71,7 @@ function getTestData() {
       if (match) testCount = Number.parseInt(match[1]);
     }
 
-    const coverageOutput = execFileSync('npm', ['test', '--', '--coverage', '--verbose'], { stdio: 'pipe' }).toString();
+    const coverageOutput = execFileSync(NPM, ['test', '--', '--coverage', '--verbose'], { stdio: 'pipe' }).toString();
     const match = coverageOutput.match(/All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/);
 
     if (match) coverage = Number.parseFloat(match[1]);
@@ -162,8 +165,8 @@ try {
     fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
   }
 
-  const currentSha = execFileSync('git', ['rev-parse', 'HEAD']).toString().trim();
-  const isFirstCommit = execFileSync('git', ['rev-list', '--count', 'HEAD']).toString().trim() === '1';
+  const currentSha = execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
+  const isFirstCommit = execFileSync(GIT, ['rev-list', '--count', 'HEAD']).toString().trim() === '1';
 
   const commitData = getCommitInfo(currentSha, isFirstCommit);
 
