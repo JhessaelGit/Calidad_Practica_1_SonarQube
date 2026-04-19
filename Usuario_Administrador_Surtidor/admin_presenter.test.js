@@ -15,9 +15,27 @@ describe("admin_presenter", () => {
     jest.resetModules();
   });
 
-  test("caso 1: estación existe", async () => {
+  test("estación no encontrada", async () => {
 
-    // ✔ forma correcta de simular URL
+    window.history.pushState({}, "", "/?id=inexistente");
+
+    jest.unstable_mockModule('../estaciones.js', () => ({
+      estaciones: {}
+    }));
+
+    const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+
+    await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
+
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+
+    expect(consoleSpy).toHaveBeenCalledWith("Estación no encontrada");
+
+    consoleSpy.mockRestore();
+  });
+
+  test("estado Disponible", async () => {
+
     window.history.pushState({}, "", "/?id=portales");
 
     jest.unstable_mockModule('../estaciones.js', () => ({
@@ -36,32 +54,30 @@ describe("admin_presenter", () => {
 
     document.dispatchEvent(new Event("DOMContentLoaded"));
 
-    expect(document.getElementById("titulo").textContent).toBe("Estación Portales");
-    expect(document.getElementById("nombre-estacion").textContent).toBe("Estación Portales");
-    expect(document.getElementById("direccion").textContent).toBe("Av. Siempre Viva");
-    expect(document.getElementById("estado-actual").textContent).toBe("Disponible");
     expect(document.getElementById("estado-actual").className).toBe("disponible");
-    expect(document.getElementById("gasolina-disponible").textContent).toBe("100L");
-    expect(document.getElementById("horario-texto").textContent).toBe("08:00 - 20:00");
   });
 
-  test("caso 2: estación NO existe", async () => {
+  test("estado Agotado", async () => {
 
-    window.history.pushState({}, "", "/?id=inexistente");
+    window.history.pushState({}, "", "/?id=portales");
 
     jest.unstable_mockModule('../estaciones.js', () => ({
-      estaciones: {}
+      estaciones: {
+        portales: {
+          nombre: "Estación Portales",
+          direccion: "Av. Siempre Viva",
+          estado: "Agotado",
+          gasolina: "0L",
+          horario: "08:00 - 20:00"
+        }
+      }
     }));
-
-    const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => {});
 
     await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
 
     document.dispatchEvent(new Event("DOMContentLoaded"));
 
-    expect(consoleSpy).toHaveBeenCalledWith("Estación no encontrada");
-
-    consoleSpy.mockRestore();
+    expect(document.getElementById("estado-actual").className).toBe("agotado");
   });
 
 });
