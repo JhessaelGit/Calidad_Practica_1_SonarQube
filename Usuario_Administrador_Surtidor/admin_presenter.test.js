@@ -1,40 +1,83 @@
-describe("FULL admin presenter coverage", () => {
+import { jest } from '@jest/globals';
 
-    beforeEach(() => {
-      document.body.innerHTML = `
-        <title id="titulo"></title>
-        <h1 id="nombre-estacion"></h1>
-        <p id="direccion"></p>
-        <p id="estado-actual"></p>
-        <p id="horario-texto"></p>
-        <p id="gasolina-disponible"></p>
-  
-        <form id="registrar-llegada-gasolina-form">
-          <input id="cantidad-gasolina" />
-          <button id="registrar-llegada-gasolina-button"></button>
-        </form>
-  
-        <form id="cancelar-ticket">
-          <input id="codigo-ticket" />
-          <button id="cancelar-button"></button>
-        </form>
-      `;
-  
-      globalThis.location = {
-        search: "?id=portales"
-      };
-  
-      jest.resetModules();
-    });
-  
-    test("ejecuta TODO admin presenter", async () => {
-      await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
-  
-      // simular submit 🔥
-      document.getElementById("registrar-llegada-gasolina-form").dispatchEvent(new Event("submit"));
-      document.getElementById("cancelar-ticket").dispatchEvent(new Event("submit"));
-  
-      expect(true).toBe(true);
-    });
-  
+describe("admin_presenter", () => {
+
+  beforeEach(() => {
+    document.body.innerHTML = `
+      <title id="titulo"></title>
+      <h1 id="nombre-estacion"></h1>
+      <p id="direccion"></p>
+      <p id="estado-actual"></p>
+      <p id="horario-texto"></p>
+      <p id="gasolina-disponible"></p>
+    `;
+
+    jest.resetModules();
   });
+
+  test("estación no encontrada", async () => {
+
+    window.history.pushState({}, "", "/?id=inexistente");
+
+    jest.unstable_mockModule('../estaciones.js', () => ({
+      estaciones: {}
+    }));
+
+    const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+
+    await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
+
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+
+    expect(consoleSpy).toHaveBeenCalledWith("Estación no encontrada");
+
+    consoleSpy.mockRestore();
+  });
+
+  test("estado Disponible", async () => {
+
+    window.history.pushState({}, "", "/?id=portales");
+
+    jest.unstable_mockModule('../estaciones.js', () => ({
+      estaciones: {
+        portales: {
+          nombre: "Estación Portales",
+          direccion: "Av. Siempre Viva",
+          estado: "Disponible",
+          gasolina: "100L",
+          horario: "08:00 - 20:00"
+        }
+      }
+    }));
+
+    await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
+
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+
+    expect(document.getElementById("estado-actual").className).toBe("disponible");
+  });
+
+  test("estado Agotado", async () => {
+
+    window.history.pushState({}, "", "/?id=portales");
+
+    jest.unstable_mockModule('../estaciones.js', () => ({
+      estaciones: {
+        portales: {
+          nombre: "Estación Portales",
+          direccion: "Av. Siempre Viva",
+          estado: "Agotado",
+          gasolina: "0L",
+          horario: "08:00 - 20:00"
+        }
+      }
+    }));
+
+    await import('../Usuario_Administrador_Surtidor/admin_presenter.js');
+
+    document.dispatchEvent(new Event("DOMContentLoaded"));
+
+    expect(document.getElementById("estado-actual").className).toBe("agotado");
+  });
+
+});
