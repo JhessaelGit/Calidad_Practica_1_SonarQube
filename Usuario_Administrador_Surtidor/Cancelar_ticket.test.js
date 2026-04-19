@@ -1,10 +1,12 @@
+import { jest } from '@jest/globals';
+
 describe("Cancelar_ticket", () => {
 
     let boton;
     let input;
     let alertMock;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         document.body.innerHTML = `
             <input id="codigo-ticket" />
             <button id="cancelar-button"></button>
@@ -12,7 +14,7 @@ describe("Cancelar_ticket", () => {
 
         alertMock = jest.spyOn(window, "alert").mockImplementation(() => {});
 
-        require("./Cancelar_ticket");
+        await import("./Cancelar_ticket.js");
 
         boton = document.querySelector("#cancelar-button");
         input = document.querySelector("#codigo-ticket");
