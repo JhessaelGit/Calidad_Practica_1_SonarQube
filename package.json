@@ -11,9 +11,10 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html Surtidores/*.html Usuario_Administrador_Surtidor/*.html Usuario_particular/*.html Verificar_datos_registro/*.html Verificar_datos/*.js",
-    "test": "node ./script/tddScript.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test-once": "jest Verificar_campos.test.js",
     "test:jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "cypress": "cypress open",
     "cypress-run": "cypress run",
     "lint": "eslint .",
