@@ -6,31 +6,38 @@ import { spawn } from 'cross-spawn';
 const COMMAND = 'jest';
 const args = ['--json', '--outputFile=./script/report.json'];
 
+// 🔹 ejecuta comando externo (async)
+
 function runCommand(command, args) {
   return new Promise((resolve, reject) => {
     const process = spawn(command, args, { stdio: 'inherit' });
+
     process.on('close', (code) => {
       resolve();
     });
   });
 }
 
+// 🔹 lee JSON
 const readJSONFile = (filePath) => {
   const rawData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(rawData);
 };
 
+// 🔹 escribe JSON
 const writeJSONFile = (filePath, data) => {
   const jsonString = JSON.stringify(data, null, 2);
   fs.writeFileSync(filePath, jsonString, 'utf-8');
 };
 
+// 🔹 asegura existencia de archivo
 const ensureFileExists = (filePath, initialData) => {
   if (!fs.existsSync(filePath)) {
     writeJSONFile(filePath, initialData);
   }
 };
 
+// 🔹 lógica principal
 const extractAndAddObject = async (reportFile, tddLogFile) => {
   try {
     await runCommand(COMMAND, args);
@@ -38,35 +45,46 @@ const extractAndAddObject = async (reportFile, tddLogFile) => {
     ensureFileExists(tddLogFile, []);
 
     const jsonData = readJSONFile(reportFile);
-    const passedTests = jsonData.numPassedTests;
-    const failedTests = jsonData.numFailedTests; 
-    const totalTests = jsonData.numTotalTests;
-    const startTime = jsonData.startTime;
-    const success = jsonData.success;
 
     const newReport = {
-      numPassedTests: passedTests,
-      failedTests: failedTests,
-      numTotalTests: totalTests,
-      timestamp: startTime,
-      success: success
+      numPassedTests: jsonData.numPassedTests,
+      failedTests: jsonData.numFailedTests,
+      numTotalTests: jsonData.numTotalTests,
+      timestamp: jsonData.startTime,
+      success: jsonData.success
     };
 
     const tddLog = readJSONFile(tddLogFile);
     tddLog.push(newReport);
 
     writeJSONFile(tddLogFile, tddLog);
+
   } catch (error) {
     console.error("Error en la ejecución:", error);
   }
 };
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// 🔹 entrypoint separado (clave para test y coverage)
+const main = () => {
+  /* istanbul ignore next */
+  const __filename = fileURLToPath(import.meta.url);
+  /* istanbul ignore next */
+  const __dirname = path.dirname(__filename);
+/* istanbul ignore next */
+  const inputFilePath = path.join(__dirname, 'report.json');
+  const outputFilePath = path.join(__dirname, 'tdd_log.json');
+/* istanbul ignore next */
+  extractAndAddObject(inputFilePath, outputFilePath);
+};
 
-const inputFilePath = path.join(__dirname, 'report.json');
-const outputFilePath = path.join(__dirname, 'tdd_log.json');
+// 🔹 exports
+export {
+  extractAndAddObject,
+  main
+};
 
-extractAndAddObject(inputFilePath, outputFilePath);
-
-export { extractAndAddObject };
+// 🔹 ejecución solo como script
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}
