@@ -5,18 +5,18 @@ import path from 'node:path';
 
 const GIT = '/usr/bin/git';
 
+// 🔹 obtiene ID del último commit
 const getLatestCommitId = () => {
     return execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
 };
 
+// 🔹 obtiene mensaje del último commit
 const getLatestCommitName = () => {
     return execFileSync(GIT, ['log', '-1', '--pretty=%B']).toString().trim();
 };
 
-const updateJsonFile = (commitId, commitName) => {
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const filePath = path.join(__dirname, 'tdd_log.json');
+// 🔹 lógica principal (testeable)
+const updateJsonFile = (commitId, commitName, filePath) => {
     const commitTimestamp = Date.now();
     const data = { commitId, commitName, commitTimestamp };
 
@@ -34,6 +34,27 @@ const updateJsonFile = (commitId, commitName) => {
     }
 };
 
-const latestCommitId = getLatestCommitId();
-const latestCommitName = getLatestCommitName();
-updateJsonFile(latestCommitId, latestCommitName);
+// 🔹 entrypoint separado (clave para coverage)
+const main = () => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, 'tdd_log.json');
+
+    const latestCommitId = getLatestCommitId();
+    const latestCommitName = getLatestCommitName();
+
+    updateJsonFile(latestCommitId, latestCommitName, filePath);
+};
+
+// 🔹 exports para testing
+export {
+    updateJsonFile,
+    getLatestCommitId,
+    getLatestCommitName,
+    main
+};
+
+/* istanbul ignore next */
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    main();
+}
