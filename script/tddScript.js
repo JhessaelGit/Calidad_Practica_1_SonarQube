@@ -72,6 +72,7 @@ const main = () => {
   const __dirname = path.dirname(__filename);
 /* istanbul ignore next */
   const inputFilePath = path.join(__dirname, 'report.json');
+  /* istanbul ignore next */
   const outputFilePath = path.join(__dirname, 'tdd_log.json');
 /* istanbul ignore next */
   extractAndAddObject(inputFilePath, outputFilePath);
