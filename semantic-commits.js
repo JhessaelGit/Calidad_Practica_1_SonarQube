@@ -12,7 +12,9 @@ function checkDependencies() {
   const huskyDir = path.join(__dirname, '.husky');
 
   if (!fs.existsSync(huskyDir)) {
+      /* istanbul ignore next */
     console.error('⚠️  Las dependencias necesarias no están instaladas.');
+      /* istanbul ignore next */
     process.exit(1);
   }
 }
@@ -84,6 +86,7 @@ export {
 };
 
 // entrypoint limpio
+  /* istanbul ignore next */
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main();
 }

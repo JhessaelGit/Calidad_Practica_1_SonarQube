@@ -6,6 +6,7 @@ const GIT = '/usr/bin/git';
 const NPX = '/usr/bin/npx';
 const NPM = '/usr/bin/npm';
 
+// 🔹 BASIC INFO
 function getBasicInfo(sha) {
   return {
     message: execFileSync(GIT, ['log', '-1', '--pretty=%B', sha]).toString().trim(),
@@ -14,6 +15,7 @@ function getBasicInfo(sha) {
   };
 }
 
+// 🔹 REPO URL
 function getRepoUrl() {
   try {
     let url = execFileSync(GIT, ['config', '--get', 'remote.origin.url'])
@@ -31,20 +33,18 @@ function getRepoUrl() {
   }
 }
 
+// 🔹 STATS
 function getStats(sha, isFirstCommit) {
   let additions = 0;
   let deletions = 0;
 
   try {
-    let diff;
-
-    if (isFirstCommit) {
-      diff = execFileSync(GIT, ['diff', '--stat', sha]).toString();
-    } else {
-      diff = execFileSync(GIT, ['diff', '--stat', `${sha}~1`, sha]).toString();
-    }
+    const diff = isFirstCommit
+      ? execFileSync(GIT, ['diff', '--stat', sha]).toString()
+      : execFileSync(GIT, ['diff', '--stat', `${sha}~1`, sha]).toString();
 
     const parts = diff.split(',');
+
     const insertionPart = parts.find(p => p.includes('insertion')) || '';
     const deletionPart = parts.find(p => p.includes('deletion')) || '';
 
@@ -55,6 +55,7 @@ function getStats(sha, isFirstCommit) {
   return { additions, deletions };
 }
 
+// 🔹 TEST DATA
 function getTestData() {
   let testCount = 0;
   let coverage = 0;
@@ -67,15 +68,13 @@ function getTestData() {
     try {
       testCount = JSON.parse(jestOutput).numTotalTests;
     } catch {
-      const regex = /numTotalTests['"]\s*:\s*(\d+)/;
-      const match = regex.exec(jestOutput);
+      const match = /numTotalTests['"]\s*:\s*(\d+)/.exec(jestOutput);
       if (match) testCount = Number.parseInt(match[1]);
     }
 
-    const coverageOutput = execFileSync(NPM, ['test', '--', '--coverage', '--verbose'], { stdio: 'pipe' }).toString();
+    const coverageOutput = execFileSync(NPM, ['test', '--', '--coverage'], { stdio: 'pipe' }).toString();
 
-    const regex = /All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/;
-    const match = regex.exec(coverageOutput);
+    const match = /All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/.exec(coverageOutput);
 
     if (match) coverage = Number.parseFloat(match[1]);
   } catch {}
@@ -83,6 +82,7 @@ function getTestData() {
   return { testCount, coverage };
 }
 
+// 🔹 MAIN OBJECT
 function getCommitInfo(sha, isFirstCommit) {
   try {
     const basic = getBasicInfo(sha);
@@ -112,25 +112,18 @@ function getCommitInfo(sha, isFirstCommit) {
   }
 }
 
+// 🔹 DUPLICATE
 function isDuplicate(newCommit, existingCommits) {
-  for (const commit of existingCommits) {
-    if (
-      commit.commit.message === newCommit.commit.message &&
-      commit.stats.additions === newCommit.stats.additions &&
-      commit.stats.deletions === newCommit.stats.deletions &&
-      commit.test_count === newCommit.test_count
-    ) {
-      const existingDate = new Date(commit.commit.date);
-      const newDate = new Date(newCommit.commit.date);
-
-      if (newDate >= existingDate) {
-        return true;
-      }
-    }
-  }
-  return false;
+  return existingCommits.some(commit =>
+    commit.commit.message === newCommit.commit.message &&
+    commit.stats.additions === newCommit.stats.additions &&
+    commit.stats.deletions === newCommit.stats.deletions &&
+    commit.test_count === newCommit.test_count &&
+    new Date(newCommit.commit.date) >= new Date(commit.commit.date)
+  );
 }
 
+// 🔹 SAVE
 function saveCommitData(commitData) {
   let commits = [];
 
@@ -142,20 +135,12 @@ function saveCommitData(commitData) {
     }
   }
 
-  const existingIndex = commits.findIndex(c => c.sha === commitData.sha);
+  const index = commits.findIndex(c => c.sha === commitData.sha);
 
-  if (existingIndex >= 0) {
-    commits[existingIndex] = commitData;
+  if (index >= 0) {
+    commits[index] = commitData;
   } else if (!isDuplicate(commitData, commits)) {
     commits.push(commitData);
-  }
-
-  if (commitData.commit.url) {
-    commits.forEach(commit => {
-      if (!commit.commit.url) {
-        commit.commit.url = commitData.commit.url.replace(/\/commit\/[^/]+$/, `/commit/${commit.sha}`);
-      }
-    });
   }
 
   commits.sort((a, b) => new Date(a.commit.date) - new Date(b.commit.date));
@@ -163,19 +148,35 @@ function saveCommitData(commitData) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(commits, null, 2));
 }
 
-try {
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
+// 🔹 MAIN
+function main() {
+  try {
+    if (!fs.existsSync(DATA_FILE)) {
+      fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
+    }
+
+    const sha = execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
+    const isFirst = execFileSync(GIT, ['rev-list', '--count', 'HEAD']).toString().trim() === '1';
+
+    const data = getCommitInfo(sha, isFirst);
+
+    if (data) saveCommitData(data);
+  } catch {
+    process.exit(1);
   }
+}
 
-  const currentSha = execFileSync(GIT, ['rev-parse', 'HEAD']).toString().trim();
-  const isFirstCommit = execFileSync(GIT, ['rev-list', '--count', 'HEAD']).toString().trim() === '1';
+export {
+  main,
+  getCommitInfo,
+  getStats,
+  getTestData,
+  isDuplicate,
+  saveCommitData,
+  getBasicInfo,   // 🔥 AGREGAR
+  getRepoUrl      // 🔥 AGREGAR
+};
 
-  const commitData = getCommitInfo(currentSha, isFirstCommit);
-
-  if (commitData) {
-    saveCommitData(commitData);
-  }
-} catch {
-  process.exit(1);
+if (process.argv[1] === new URL(import.meta.url).pathname) {
+  main();
 }
