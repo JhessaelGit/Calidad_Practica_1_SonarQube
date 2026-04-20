@@ -67,12 +67,15 @@ function getTestData() {
     try {
       testCount = JSON.parse(jestOutput).numTotalTests;
     } catch {
-      const match = jestOutput.match(/numTotalTests['"]\s*:\s*(\d+)/);
+      const regex = /numTotalTests['"]\s*:\s*(\d+)/;
+      const match = regex.exec(jestOutput);
       if (match) testCount = Number.parseInt(match[1]);
     }
 
     const coverageOutput = execFileSync(NPM, ['test', '--', '--coverage', '--verbose'], { stdio: 'pipe' }).toString();
-    const match = coverageOutput.match(/All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/);
+
+    const regex = /All files\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*\d+\s*\|\s*(\d+(\.\d+)?)\s*\|/;
+    const match = regex.exec(coverageOutput);
 
     if (match) coverage = Number.parseFloat(match[1]);
   } catch {}
