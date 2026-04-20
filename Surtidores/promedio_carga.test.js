@@ -13,3 +13,19 @@ describe("Cálculo del promedio de carga de gasolina", () => {
   });
 
 });
+
+// =====================================================
+// TEST 4 — calcularPromedioCarga
+// Módulo: promedio_carga.js
+// =====================================================
+// TEST 4 — calcularPromedioCarga
+// Módulo: promedio_carga.js
+// =====================================================
+
+describe('calcularPromedioCarga', () => {
+  test('CP4b: calcula el promedio de carga con un contador dado', () => {
+    const resultado = calcularPromedioCarga(10);
+    expect(typeof resultado).toBe('number');
+    expect(resultado).toBeGreaterThanOrEqual(0);
+  });
+});

@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       localStorage.setItem("ticketActual", JSON.stringify(ticket));
-      globalThis.location.href = "ticket.html";
+      globalThis.open("ticket.html", "_self");
     });
   }
 

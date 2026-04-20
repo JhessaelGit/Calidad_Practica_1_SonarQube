@@ -1,4 +1,4 @@
-import {verificarDisponibilidad,generarTicket} from './ticket.js';
+import { verificarDisponibilidad, generarTicket } from './ticket.js';
 
 describe("Disponibilidad de combustible", () => {
   it("Debe retornar true si hay combustible", () => {
@@ -12,41 +12,66 @@ describe("Disponibilidad de combustible", () => {
 
 
 describe("Generación básica de ticket", () => {
-    it("Debe generar un ticket con nombre y ubicación del surtidor", () => {
-      const datosSurtidor = {
-        nombre: "E. S. Aranjuez",
-        ubicacion: "Avenida Circunvalacion entre calle Los Olivios"
-      };
-  
-      const ticket = generarTicket(datosSurtidor);
-  
-      expect(ticket.nombre).toBe("E. S. Aranjuez");
-      expect(ticket.ubicacion).toBe("Avenida Circunvalacion entre calle Los Olivios");
-    });
+  it("Debe generar un ticket con nombre y ubicación del surtidor", () => {
+    const datosSurtidor = {
+      nombre: "E. S. Aranjuez",
+      ubicacion: "Avenida Circunvalacion entre calle Los Olivios"
+    };
 
-    it("Debe incluir el estado del surtidor", () => {
-        const datos = {
-          nombre: "E. S. Aranjuez",
-          ubicacion: "Avenida Circunvalacion entre calle Los Olivios",
-          estado: "Disponible"
-        };
-    
-        const ticket = generarTicket(datos);
-    
-        expect(ticket.estado).toBe("Disponible");
-      });
+    const ticket = generarTicket(datosSurtidor);
 
-      it("Debe generar un código alfanumérico único con formato TK-XXXXXX", () => {
-        const datos = {
-          nombre: "E. S. Aranjuez",
-          ubicacion: "Avenida Circunvalacion entre calle Los Olivios",
-          estado: "Disponible"
-        };
-    
-        const ticket = generarTicket(datos);
-    
-        expect(ticket.codigo).toMatch(/^TK-[A-Z0-9]{6}$/);
-      });
-    
-    
+    expect(ticket.nombre).toBe("E. S. Aranjuez");
+    expect(ticket.ubicacion).toBe("Avenida Circunvalacion entre calle Los Olivios");
   });
+
+  it("Debe incluir el estado del surtidor", () => {
+    const datos = {
+      nombre: "E. S. Aranjuez",
+      ubicacion: "Avenida Circunvalacion entre calle Los Olivios",
+      estado: "Disponible"
+    };
+
+    const ticket = generarTicket(datos);
+
+    expect(ticket.estado).toBe("Disponible");
+  });
+
+  it("Debe generar un código alfanumérico único con formato TK-XXXXXX", () => {
+    const datos = {
+      nombre: "E. S. Aranjuez",
+      ubicacion: "Avenida Circunvalacion entre calle Los Olivios",
+      estado: "Disponible"
+    };
+
+    const ticket = generarTicket(datos);
+
+    expect(ticket.codigo).toMatch(/^TK-[A-Z0-9]{6}$/);
+  });
+
+
+});
+
+
+// =====================================================
+// TEST 2 (CP2) — generarTicket
+// Módulo: ticket.js
+// =====================================================
+// TEST 2 (CP2) — generarTicket
+// Módulo: ticket.js
+// =====================================================
+
+describe('generarTicket', () => {
+  test('CP2: genera un ticket con los datos correctos de la estación', () => {
+    const datos = {
+      nombre: 'Surtidor Norte',
+      ubicacion: 'Av. Oquendo 123',
+      estado: 'Disponible'
+    };
+    const ticket = generarTicket(datos);
+
+    expect(ticket).toBeDefined();
+    expect(ticket.nombre).toBe('Surtidor Norte');
+    expect(ticket.ubicacion).toBe('Av. Oquendo 123');
+    expect(ticket.estado).toBe('Disponible');
+  });
+});
