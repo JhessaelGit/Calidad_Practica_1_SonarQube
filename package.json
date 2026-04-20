@@ -6,7 +6,16 @@
   "type": "module",
   "jest": {
     "testEnvironment": "jsdom",
-    "transform": {}
+    "transform": {},
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coverageDirectory": "coverage",
+    "testMatch": [
+      "**/*.test.js"
+    ]
   },
   "scripts": {
     "start": "parcel index.html",
@@ -38,13 +47,5 @@
   },
   "dependencies": {
     "parcel-jest-base": "file:"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "transform": {},
-    "collectCoverage": true,
-    "coverageReporters": ["lcov", "text"],
-    "coverageDirectory": "coverage",
-    "testMatch": ["**/*.test.js"]
-  } 
+  }
 }
